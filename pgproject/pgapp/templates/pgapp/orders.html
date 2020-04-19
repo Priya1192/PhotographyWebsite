@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>You have selected {{item.title}}</h1>
+<form method="POST" action="orders">
+    {% csrf_token %}
+    Name    <input type="text" name="name"><br><br>
+    Email   <input type="email" name="email"><br><br>
+    City    <input type="text" name="city"><br><br>
+
+    <input type="submit"><br><br>
+
+</form>
+
+{% endblock content %}
