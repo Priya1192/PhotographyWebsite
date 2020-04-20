@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pgapp.apps.PgappConfig',
+    'pgmail.apps.PgmailConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'pgproject/static'),
 ]
+
+
+# DATAFLAIR
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'zeva.connect@gmail.com'
+EMAIL_HOST_PASSWORD ='zevapassword123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+
+
+
