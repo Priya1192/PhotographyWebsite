@@ -1,11 +1,17 @@
 {% extends "index.html" %}
 {% block content %}
-<h1>You have selected {{item.title}}</h1>
+<h3>Fill the details below!</h3><br><br>
 <form method="POST" action="orders">
     {% csrf_token %}
-    Name    <input type="text" name="name"><br><br>
-    Email   <input type="email" name="email"><br><br>
-    City    <input type="text" name="city"><br><br>
+    Name    <input type="text" name="name" required="required"><br><br>
+    Email   <input type="email" name="email" required="required"><br><br>
+    City    <input type="text" name="city" required="required"><br><br>
+    Event   <select id="mylist" name="options">
+        <option value ='Wedding'>Wedding</option>
+        <option value ='Birthday'>Birthday</option>
+        <option value ='Farewell'>Farewell</option>
+    </select>
+    <br><br><br>
 
     <input type="submit"><br><br>
 

@@ -12,11 +12,15 @@ def orders(request):
 
 def addorder(request):
     if request.method == "POST":
+
         if request.POST.get('name') and request.POST.get('email') and request.POST.get('city'):
             o = Orders()
             o.name = request.POST["name"]
             o.email = request.POST["email"]
             o.city = request.POST["city"]
+            o.event = request.POST["options"]
+
+
             o.save()
         else:
             print("incomplete fields")
